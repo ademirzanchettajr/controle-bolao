@@ -1,0 +1,94 @@
+# Sistema de Controle de Bolão
+
+O intuito desse sistema e' de controlar um sistema de apostas de um grupo fechado de pessoas, pre-cadastradas no sistema. 
+
+Cada participante envia os palpites de resultados de jogos. O sistema se limitara a receber palpites para campeonatos de futebol numa primeira versao. 
+
+## Dos Campeonatos
+
+O sistema tera a capacidade de controlar palpites e resultados de varios campeonatos.
+A pontuacao e os palpites sao feitos por campeonato.
+A table de jogos de cada campeonato deve ser mantida em um arquivo JSON contendo a lista de jogos agrupados por rodada. 
+
+Por exemplo:
+```
+- Campeonatos
+    Brasileirao-2025
+        Regras 
+            regras.json
+        Tabela
+            tabela.json
+        Resultados
+            rodada01.json
+            ...
+        Participantes
+           MarioSilva
+             palpites.json
+            ...
+    CampeonatoPaulista2025
+        Regras 
+            regras.json
+        Tabela
+            tabela.json
+        Resultados
+            rodada01.json
+            ...
+        Participantes
+           MarioSilva
+             palpites.json
+``
+
+## Envio de palpites
+
+Cada participante envia os palpites de resultados por mensagens num grupo fechado de WhatsApp. Os palpites deverao ser automaticamente obtidos em formato texto e convertidos em um arquivo JSON especifico para cada apostador com o nome `palpites.json` criado num sub-diretorio com o nome do participante. 
+
+Exemplo de entrada de palpite em formato texto sem estrutura recebido por mensagem WhatsApp:
+
+```
+Apostador: Mario Silva
+1ª Rodada:
+Atlético/MG 1 x 2 Flamengo 
+Grêmio 1 x 2 Palmeiras
+Vitória 1 x 2 Mirassol 
+
+Aposta Extra:
+
+Jogo 5: Santos 2x 1Sport
+```
+
+## Regras de pontuação
+
+As regras de pontuacao serao definidas em um arquivo JSON que descrevera os pontos obtidos para cada palpite de participantes. Esse arquivo sera armazenado num sub-diretorio `Regras` debaixo do diretorio do campeonato relacionado. 
+
+### Do calculo de pontos 
+A pontuacao é calculada atraves da comparacao do resultado enviado pelo apostador e o resultado oficial que terminou a partida, sendo que para cada situação é atribuida uma pontuacao diferente conforme descrita abaixo:
+
+	- Acertar o resultado da partida (quando o resultado do apostador é exatamente igual ao resultado oficial do jogo), o apostador recebe 12 pontos somado a um bonus.
+
+		- O bonus corresponde a 1 ponto dividido pelo numero de apostadores que acertaram o resultado do mesmo jogo.
+
+	- Acertar a vitória de um dos times mais o numero de gols de apenas uma equipe (quando o maior numero de gols de um dos times do jogo do resultado oficial é o mesmo do resultado do apostador e ainda o numero de gols de apenas um dos times, sendo o maior ou menor, são iguais) Nesse caso o apostador recebe 7 pontos.
+
+	- Acertar a vitória de um dos times mais diferença dos gols do time vitorioso menos os gols do time derrotado (quando o maior numero de gols de um dos times do jogo do resultado oficial é o mesmo do resultado do apostador e ainda a diferença de gols do time vitorioso e do time derrotado são iguais) Nesse caso o apostador recebe 6 pontos.
+
+	- Acertar a vitória de um dos times mais soma dos gols do jogo (quando o maior numero de gols de um dos times do jogo do resultado oficial é o mesmo do resultado do apostador e ainda a soma dos gols do jogo são iguais) Nesse caso o apostador recebe 6 pontos.
+
+	- Acertar apenas a vitória de um dos times não se encaixando nas condições anteriores descritas (quando o maior numero de gols de um dos times do jogo do resultado oficial é o mesmo do resultado do apostador) Nesse caso o apostador recebe 5 pontos.
+
+	- Acertar apenas o empate da partida sem acertar os gols de nenhum dos times (quando o numero de gols dos dois times do jogo do resultado oficial são iguais e o resultado do apostador também são iguais porém não acertou número de gols de cada time) Nesse caso o apostador recebe 5 pontos.
+
+	- Acertar apenas gols de um time (quando o apostador acerta apenas o numero de gols que um time iria fazer sem acertar que um dos times venceria ou empataria) Nesse caso o apostador recebe 2 pontos.
+
+	- Acertar apenas a soma de gols do jogo (quando o apostador acerta apenas a soma de gols dos dois times sem acertar que um dos times venceria ou empataria) Nesse caso o apostador recebe 1 ponto.
+
+	- Resultado inverso (quando o apostador colocou exatamente o resultado oposto que o jogo oficial, invertendo o placar)  Nesse caso o apostador recebe -1 ponto (menos um ponto).
+
+   
+### Da classificacao 
+	- A cada rodada, conforme as regras de pontuação descritas acima, a pontuação do jogo de cada resultado do apostador vai sendo somada para que represente a classificação do apostadores com relação aos demais apostadores. 
+
+
+### Da notificacoes de classificacao 
+	- A apresentação da classificação deve ser feita comparando a soma da classificação dos apostadores e ordenando os mesmos do maior para para o menor, apresentando em linhas com as seguintes colunas:
+Ordem, Apostador, Pontuação
+

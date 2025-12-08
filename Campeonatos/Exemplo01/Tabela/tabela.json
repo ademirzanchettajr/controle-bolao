@@ -1,0 +1,196 @@
+{
+  "campeonato": "Campeonato Brasileiro Série A",
+  "temporada": "2024",
+  "rodada_atual": 3,
+  "data_atualizacao": "2025-04-01T05:00:00Z",
+  "codigo_campeonato": "00003",
+  "rodadas": [
+    {
+      "numero": 1,
+      "data_inicial": "2024-04-10T16:00:00Z",
+      "data_final": "2024-04-16T21:00:00Z",
+      "jogos": [
+        {
+          "id": "jogo-001",
+          "mandante": "Flamengo",
+          "visitante": "Palmeiras",
+          "data": "2024-04-13T16:00:00Z",
+          "local": "Maracanã",
+          "gols_mandante": 2,
+          "gols_visitante": 1,
+          "status": "finalizado",
+          "obrigatorio": true
+        },
+        {
+          "id": "jogo-002",
+          "mandante": "Corinthians",
+          "visitante": "São Paulo",
+          "data": "2024-04-13T18:30:00Z",
+          "local": "Neo Química Arena",
+          "gols_mandante": 1,
+          "gols_visitante": 1,
+          "status": "finalizado",
+          "obrigatorio": true
+        },
+        {
+          "id": "jogo-003",
+          "mandante": "Grêmio",
+          "visitante": "Internacional",
+          "data": "2024-04-14T16:00:00Z",
+          "local": "Arena do Grêmio",
+          "gols_mandante": 0,
+          "gols_visitante": 2,
+          "status": "finalizado",
+          "obrigatorio": true
+        },
+        {
+          "id": "jogo-004",
+          "mandante": "Atlético-MG",
+          "visitante": "Cruzeiro",
+          "data": "2024-04-14T18:30:00Z",
+          "local": "Arena MRV",
+          "gols_mandante": 3,
+          "gols_visitante": 0,
+          "status": "finalizado",
+          "obrigatorio": true
+        },
+        {
+          "id": "jogo-005",
+          "mandante": "Botafogo",
+          "visitante": "Vasco",
+          "data": "2024-04-14T21:00:00Z",
+          "local": "Estádio Nilton Santos",
+          "gols_mandante": 2,
+          "gols_visitante": 2,
+          "status": "finalizado",
+          "obrigatorio": true
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "data_inicial": "2024-04-17T16:00:00Z",
+      "data_final": "2024-04-23T21:00:00Z",
+      "jogos": [
+        {
+          "id": "jogo-006",
+          "mandante": "Palmeiras",
+          "visitante": "Corinthians",
+          "data": "2024-04-20T16:00:00Z",
+          "local": "Allianz Parque",
+          "gols_mandante": 1,
+          "gols_visitante": 0,
+          "status": "finalizado",
+          "obrigatorio": true
+        },
+        {
+          "id": "jogo-007",
+          "mandante": "São Paulo",
+          "visitante": "Grêmio",
+          "data": "2024-04-20T18:30:00Z",
+          "local": "Morumbi",
+          "gols_mandante": 2,
+          "gols_visitante": 1,
+          "status": "finalizado",
+          "obrigatorio": true
+        },
+        {
+          "id": "jogo-008",
+          "mandante": "Internacional",
+          "visitante": "Atlético-MG",
+          "data": "2024-04-21T16:00:00Z",
+          "local": "Beira-Rio",
+          "gols_mandante": 1,
+          "gols_visitante": 3,
+          "status": "finalizado",
+          "obrigatorio": true
+        },
+        {
+          "id": "jogo-009",
+          "mandante": "Cruzeiro",
+          "visitante": "Botafogo",
+          "data": "2024-04-21T18:30:00Z",
+          "local": "Mineirão",
+          "gols_mandante": 0,
+          "gols_visitante": 1,
+          "status": "finalizado",
+          "obrigatorio": true
+        },
+        {
+          "id": "jogo-010",
+          "mandante": "Vasco",
+          "visitante": "Flamengo",
+          "data": "2024-04-21T21:00:00Z",
+          "local": "São Januário",
+          "gols_mandante": 1,
+          "gols_visitante": 4,
+          "status": "finalizado",
+          "obrigatorio": true
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "data_inicial": "2024-04-24T16:00:00Z",
+      "data_final": "2024-04-30T21:00:00Z",
+      "jogos": [
+        {
+          "id": "jogo-011",
+          "mandante": "Flamengo",
+          "visitante": "Corinthians",
+          "data": "2024-04-27T16:00:00Z",
+          "local": "Maracanã",
+          "gols_mandante": 2,
+          "gols_visitante": 0,
+          "status": "finalizado",
+          "obrigatorio": true
+        },
+        {
+          "id": "jogo-012",
+          "mandante": "Palmeiras",
+          "visitante": "Grêmio",
+          "data": "2024-04-27T18:30:00Z",
+          "local": "Allianz Parque",
+          "gols_mandante": 3,
+          "gols_visitante": 1,
+          "status": "finalizado",
+          "obrigatorio": true
+        },
+        {
+          "id": "jogo-013",
+          "mandante": "São Paulo",
+          "visitante": "Internacional",
+          "data": "2024-04-28T16:00:00Z",
+          "local": "Morumbi",
+          "gols_mandante": 1,
+          "gols_visitante": 1,
+          "status": "finalizado",
+          "obrigatorio": true
+        },
+        {
+          "id": "jogo-014",
+          "mandante": "Atlético-MG",
+          "visitante": "Vasco",
+          "data": "2024-04-28T18:30:00Z",
+          "local": "Arena MRV",
+          "gols_mandante": 2,
+          "gols_visitante": 1,
+          "status": "finalizado",
+          "obrigatorio": true
+        },
+        {
+          "id": "jogo-015",
+          "mandante": "Botafogo",
+          "visitante": "Cruzeiro",
+          "data": "2024-04-28T21:00:00Z",
+          "local": "Estádio Nilton Santos",
+          "gols_mandante": 3,
+          "gols_visitante": 2,
+          "status": "finalizado",
+          "obrigatorio": true
+        }
+      ]
+    }
+  ]
+}
+    

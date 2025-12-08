@@ -1,0 +1,131 @@
+{
+  "apostador": "Mario Silva",
+  "codigo_apostador": "0230",
+  "campeonato": "Campeonato Brasileiro Série A",
+  "temporada": "2024",
+  "palpites": [
+    {
+      "rodada": 1,
+      "data_palpite": "2024-04-12T10:30:00Z",
+      "jogos": [
+        {
+          "id": "jogo-001",
+          "mandante": "Flamengo",
+          "visitante": "Palmeiras",
+          "palpite_mandante": 2,
+          "palpite_visitante": 1
+        },
+        {
+          "id": "jogo-002",
+          "mandante": "Corinthians",
+          "visitante": "São Paulo",
+          "palpite_mandante": 1,
+          "palpite_visitante": 2
+        },
+        {
+          "id": "jogo-003",
+          "mandante": "Grêmio",
+          "visitante": "Internacional",
+          "palpite_mandante": 1,
+          "palpite_visitante": 1
+        },
+        {
+          "id": "jogo-004",
+          "mandante": "Atlético-MG",
+          "visitante": "Cruzeiro",
+          "palpite_mandante": 2,
+          "palpite_visitante": 0
+        },
+        {
+          "id": "jogo-005",
+          "mandante": "Botafogo",
+          "visitante": "Vasco",
+          "palpite_mandante": 2,
+          "palpite_visitante": 2
+        }
+      ]
+    },
+    {
+      "rodada": 2,
+      "data_palpite": "2024-04-19T14:15:00Z",
+      "jogos": [
+        {
+          "id": "jogo-006",
+          "mandante": "Palmeiras",
+          "visitante": "Corinthians",
+          "palpite_mandante": 2,
+          "palpite_visitante": 0
+        },
+        {
+          "id": "jogo-007",
+          "mandante": "São Paulo",
+          "visitante": "Grêmio",
+          "palpite_mandante": 2,
+          "palpite_visitante": 1
+        },
+        {
+          "id": "jogo-008",
+          "mandante": "Internacional",
+          "visitante": "Atlético-MG",
+          "palpite_mandante": 1,
+          "palpite_visitante": 2
+        },
+        {
+          "id": "jogo-009",
+          "mandante": "Cruzeiro",
+          "visitante": "Botafogo",
+          "palpite_mandante": 1,
+          "palpite_visitante": 1
+        },
+        {
+          "id": "jogo-010",
+          "mandante": "Vasco",
+          "visitante": "Flamengo",
+          "palpite_mandante": 0,
+          "palpite_visitante": 3
+        }
+      ]
+    },
+    {
+      "rodada": 3,
+      "data_palpite": "2024-04-26T16:45:00Z",
+      "jogos": [
+        {
+          "id": "jogo-011",
+          "mandante": "Flamengo",
+          "visitante": "Corinthians",
+          "palpite_mandante": 3,
+          "palpite_visitante": 1
+        },
+        {
+          "id": "jogo-012",
+          "mandante": "Palmeiras",
+          "visitante": "Grêmio",
+          "palpite_mandante": 2,
+          "palpite_visitante": 0
+        },
+        {
+          "id": "jogo-013",
+          "mandante": "São Paulo",
+          "visitante": "Internacional",
+          "palpite_mandante": 1,
+          "palpite_visitante": 1
+        },
+        {
+          "id": "jogo-014",
+          "mandante": "Atlético-MG",
+          "visitante": "Vasco",
+          "palpite_mandante": 2,
+          "palpite_visitante": 1
+        },
+        {
+          "id": "jogo-015",
+          "mandante": "Botafogo",
+          "visitante": "Cruzeiro",
+          "palpite_mandante": 2,
+          "palpite_visitante": 1
+        }
+      ]
+    }
+  ]
+}
