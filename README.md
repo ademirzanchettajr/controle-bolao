@@ -443,3 +443,10 @@ Em todas essa tarefas o codigo gerado devera fazer:
 
 - **Versão 1.0**: Sistema básico para campeonatos de futebol
 - **Futuras Expansões**: Outros esportes, apostas especiais, estatísticas avançadas
+
+---
+
+## Desenvolvedores
+
+- ademirzanchettajr
+- lsilvapvt
