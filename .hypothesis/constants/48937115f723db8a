@@ -1,0 +1,4 @@
+# file: /Users/lmpsilva/Documents/sandbox/ControleBolao/src/scripts/gerar_regras.py
+# hypothesis_version: 6.141.1
+
+['%Y-%m-%dT%H:%M:%SZ', '--campeonato', '--sobrescrever', '1.0', 'Digite a temporada: ', 'Regras', 'Tabela', '__main__', 'bonus_divisor', 'campeonato', 'codigo', 'data_criacao', 'descricao', 'observacoes', 'pontos', 'pontos_base', 'r', 'regras', 's', 'sim', 'store_true', 'tabela.json', 'temporada', 'utf-8', 'versao', 'w', 'y', 'yes']

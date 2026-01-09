@@ -1,0 +1,13 @@
+# Bolão Prototype Scripts - Dependencies
+# Testing frameworks
+hypothesis>=6.0.0
+pytest>=7.0.0
+
+# Excel file processing
+openpyxl>=3.0.0
+
+# Date/time utilities
+python-dateutil>=2.8.0
+
+# String similarity for team name matching
+python-Levenshtein>=0.20.0

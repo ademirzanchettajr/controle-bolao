@@ -1,0 +1,85 @@
+===============================================================================
+                        RELATÓRIO DA RODADA 2
+===============================================================================
+Campeonato: Copa-Exemplo-2025
+Temporada: 2025
+Data do Relatório: 2025-01-09 12:30:00
+Rodada Processada: 2
+
+===============================================================================
+                           CLASSIFICAÇÃO GERAL
+===============================================================================
+
+Pos | Participante      | Pts Rodada | Pts Total | Variação | Jogos | Códigos de Acerto
+----|-------------------|------------|-----------|----------|-------|------------------
+1º  | Pedro Oliveira    |    13.00   |   27.00   |   ↑1     |  12   | V,E,E,AR,VD,AR
+2º  | João Silva        |    11.50   |   26.83   |   ↓1     |  12   | V,E,E,VG,VD,VG
+3º  | Maria Santos      |    12.00   |   25.00   |    --    |  12   | AR,E,E,VG,RI,VD
+4º  | Ana Costa         |    11.00   |   23.00   |    --    |  12   | V,E,E,V,E,VD
+5º  | Carlos Alberto    |    10.00   |   21.00   |   ↑1     |  12   | V,E,E,VG,RI,E
+6º  | Fernanda Lima     |    10.50   |   20.50   |   ↑1     |  12   | V,E,E,RI,E,AR
+7º  | Roberto Carlos    |     9.00   |   18.00   |    --    |  12   | V,E,E,VG,RI,VG
+8º  | José Santos       |     8.50   |   16.50   |    --    |  12   | V,E,E,V,VD,RI
+9º  | Mario Silva       |     8.00   |   15.00   |    --    |  12   | V,E,E,V,RI,VD
+
+===============================================================================
+                              DETALHES DOS JOGOS
+===============================================================================
+
+Jogo 7: Palmeiras 1x0 Santos
+- Acertos exatos: 0 participantes
+- Melhor acerto: Apenas vencedor (5 pontos)
+
+Jogo 8: Corinthians 2x2 São Paulo
+- Acertos exatos: 1 participante (Maria Santos)
+- Bônus por acerto exato: 1.00 ponto
+
+Jogo 9: Grêmio 1x1 Atlético-MG
+- Acertos exatos: 0 participantes
+- Melhor acerto: Apenas empate (5 pontos)
+
+Jogo 10: Botafogo 3x1 Vasco
+- Acertos exatos: 2 participantes (Pedro Oliveira, Roberto Carlos)
+- Bônus por acerto exato: 0.50 pontos
+
+Jogo 11: Cruzeiro 0x2 Internacional
+- Acertos exatos: 1 participante (Pedro Oliveira)
+- Bônus por acerto exato: 1.00 ponto
+
+Jogo 12: Bahia 1x3 Flamengo
+- Acertos exatos: 1 participante (Fernanda Lima)
+- Bônus por acerto exato: 1.00 ponto
+
+===============================================================================
+                            RESUMO ACUMULADO
+===============================================================================
+
+Melhor Participante: Pedro Oliveira (27.00 pontos)
+Maior Subida: Pedro Oliveira (9º → 1º)
+Maior Queda: João Silva (1º → 2º)
+Participante Mais Consistente: Ana Costa (manteve 4ª posição)
+
+Acertos Exatos por Participante:
+- Pedro Oliveira: 3 acertos
+- João Silva: 2 acertos  
+- Maria Santos: 2 acertos
+- Ana Costa: 2 acertos
+- Carlos Alberto: 1 acerto
+- Fernanda Lima: 2 acertos
+- Roberto Carlos: 2 acertos
+- José Santos: 0 acertos
+- Mario Silva: 0 acertos
+
+===============================================================================
+                              ESTATÍSTICAS
+===============================================================================
+
+Total de Participantes: 9
+Total de Jogos Processados: 12
+Total de Palpites: 108
+Acertos Exatos Totais: 17
+Taxa de Acerto Exato Geral: 15.7%
+Pontuação Média Acumulada: 21.4 pontos
+Amplitude de Pontuação: 12.0 pontos
+
+===============================================================================

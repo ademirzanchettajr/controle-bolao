@@ -1,0 +1,151 @@
+===============================================================================
+                    RELATÓRIO FINAL - COPA EXEMPLO 2025
+===============================================================================
+Campeonato: Copa-Exemplo-2025
+Temporada: 2025
+Período: 13/04/2025 - 20/04/2025
+Total de Rodadas: 2
+Data do Relatório: 2025-01-09 12:45:00
+
+===============================================================================
+                           CLASSIFICAÇÃO FINAL
+===============================================================================
+
+🏆 CAMPEÃO: Pedro Oliveira (27.00 pontos)
+
+Pos | Participante      | Pts Total | Rodada 1 | Rodada 2 | Melhor Rodada
+----|-------------------|-----------|----------|----------|---------------
+1º  | Pedro Oliveira    |   27.00   |   14.00  |   13.00  |   Rodada 1
+2º  | João Silva        |   26.83   |   15.33  |   11.50  |   Rodada 1
+3º  | Maria Santos      |   25.00   |   13.00  |   12.00  |   Rodada 2
+4º  | Ana Costa         |   23.00   |   12.00  |   11.00  |   Rodada 1
+5º  | Carlos Alberto    |   21.00   |   11.00  |   10.00  |   Rodada 1
+6º  | Fernanda Lima     |   20.50   |   10.00  |   10.50  |   Rodada 2
+7º  | Roberto Carlos    |   18.00   |    9.00  |    9.00  |   Empate
+8º  | José Santos       |   16.50   |    8.00  |    8.50  |   Rodada 2
+9º  | Mario Silva       |   15.00   |    7.00  |    8.00  |   Rodada 2
+
+===============================================================================
+                              PREMIAÇÃO
+===============================================================================
+
+🥇 1º Lugar: Pedro Oliveira - 27.00 pontos
+🥈 2º Lugar: João Silva - 26.83 pontos  
+🥉 3º Lugar: Maria Santos - 25.00 pontos
+
+🎯 Maior Pontuação em Uma Rodada: João Silva (15.33 pts - Rodada 1)
+📈 Maior Evolução: Mario Silva (+1.00 pt entre rodadas)
+📉 Maior Queda: João Silva (-3.83 pts entre rodadas)
+🎪 Mais Consistente: Roberto Carlos (mesma pontuação nas 2 rodadas)
+
+===============================================================================
+                           ESTATÍSTICAS GERAIS
+===============================================================================
+
+Participação:
+- Total de Participantes: 9
+- Participantes Ativos: 9 (100%)
+- Total de Palpites Enviados: 108
+- Taxa de Participação: 100%
+
+Acertos:
+- Total de Acertos Exatos: 17
+- Taxa de Acerto Exato: 15.7%
+- Participante com Mais Acertos Exatos: Pedro Oliveira (3)
+- Jogos com Mais Acertos Exatos: Flamengo 2x1 Palmeiras (3 acertos)
+
+Pontuação:
+- Pontuação Total Distribuída: 192.83 pontos
+- Média por Participante: 21.4 pontos
+- Maior Pontuação Individual: 27.00 pontos
+- Menor Pontuação Individual: 15.00 pontos
+- Amplitude: 12.00 pontos
+
+===============================================================================
+                            ANÁLISE POR RODADA
+===============================================================================
+
+RODADA 1 (13/04/2025):
+- Jogos: 6
+- Palpites: 54
+- Acertos Exatos: 12 (22.2%)
+- Pontuação Média: 11.0 pontos
+- Destaque: João Silva (15.33 pontos)
+
+RODADA 2 (20/04/2025):
+- Jogos: 6  
+- Palpites: 54
+- Acertos Exatos: 5 (9.3%)
+- Pontuação Média: 10.4 pontos
+- Destaque: Pedro Oliveira (13.00 pontos)
+
+===============================================================================
+                          CÓDIGOS MAIS UTILIZADOS
+===============================================================================
+
+V   (Apenas Vencedor): 45 ocorrências
+E   (Apenas Empate): 23 ocorrências  
+AR  (Resultado Exato): 17 ocorrências
+VG  (Vencedor + Gols Uma Equipe): 12 ocorrências
+VD  (Vencedor + Diferença): 8 ocorrências
+RI  (Resultado Invertido): 3 ocorrências
+
+===============================================================================
+                            JOGOS MAIS DIFÍCEIS
+===============================================================================
+
+1. Palmeiras 1x0 Santos (Rodada 2)
+   - 0 acertos exatos
+   - Pontuação média: 5.0 pontos
+
+2. Grêmio 1x1 Atlético-MG (Rodada 2)  
+   - 0 acertos exatos
+   - Pontuação média: 5.0 pontos
+
+3. Vasco 0x1 Cruzeiro (Rodada 1)
+   - 1 acerto exato
+   - Pontuação média: 4.2 pontos
+
+===============================================================================
+                            JOGOS MAIS FÁCEIS
+===============================================================================
+
+1. Flamengo 2x1 Palmeiras (Rodada 1)
+   - 3 acertos exatos
+   - Pontuação média: 8.1 pontos
+
+2. Santos 1x1 Corinthians (Rodada 1)
+   - 2 acertos exatos  
+   - Pontuação média: 7.5 pontos
+
+3. São Paulo 3x0 Grêmio (Rodada 1)
+   - 2 acertos exatos
+   - Pontuação média: 7.0 pontos
+
+===============================================================================
+                              CURIOSIDADES
+===============================================================================
+
+🎲 Resultado Mais Surpreendente: Botafogo 3x1 Vasco
+   - Apenas 2 participantes acertaram o placar exato
+
+⚽ Jogo Mais Equilibrado nos Palpites: Corinthians 2x2 São Paulo
+   - Palpites distribuídos entre vitória, empate e derrota
+
+🔥 Sequência de Acertos: Pedro Oliveira acertou 2 placares exatos consecutivos na Rodada 2
+
+❄️ Sequência de Erros: Mario Silva não acertou nenhum placar exato em 2 rodadas
+
+===============================================================================
+                               AGRADECIMENTOS
+===============================================================================
+
+Parabéns a todos os participantes da Copa Exemplo 2025!
+
+Obrigado pela participação e fair play durante todo o campeonato.
+Nos vemos na próxima temporada!
+
+Sistema de Controle de Bolão - Versão 1.0
+Relatório gerado automaticamente em 2025-01-09 12:45:00
+
+===============================================================================

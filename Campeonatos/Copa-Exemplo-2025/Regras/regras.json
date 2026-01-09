@@ -1,0 +1,17 @@
+{
+  "campeonato": "Copa-Exemplo-2025",
+  "temporada": "2025",
+  "versao": "1.0",
+  "data_criacao": "2026-01-09T17:44:27Z",
+  "regras": {
+    "placeholder": {
+      "pontos": 0,
+      "descricao": "Regra temporária - use gerar_regras.py para criar regras completas",
+      "codigo": "TEMP"
+    }
+  },
+  "observacoes": [
+    "Arquivo de regras criado automaticamente",
+    "Use o script gerar_regras.py para popular com regras padrão"
+  ]
+}

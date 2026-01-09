@@ -1,0 +1,4 @@
+# file: /Users/lmpsilva/Documents/sandbox/ControleBolao/src/scripts/importar_palpites.py
+# hypothesis_version: 6.141.1
+
+[0.7, '\nApostas extras:', '\nErros encontrados:', '-', '--arquivo', '--campeonato', '--rodada', '--texto', '.', '?', 'Extra', 'Nome do campeonato', 'Operação cancelada', 'Participantes', 'Tabela', '_', '__main__', 'apostador', 'apostas_extras', 'data_palpite', 'gols_mandante', 'gols_visitante', 'id', 'identificador', 'jogos', 'mandante', 'numero', 'palpite_mandante', 'palpite_visitante', 'palpites', 'r', 'rodada', 'rodada_inferida', 'rodadas', 's', 'sim', 'tipo', 'utf-8', 'visitante', 'w', 'y', 'yes']

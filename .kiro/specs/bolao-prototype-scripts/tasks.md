@@ -1,25 +1,25 @@
 # Implementation Plan
 
-- [ ] 1. Configurar estrutura do projeto e dependências
+- [x] 1. Configurar estrutura do projeto e dependências
   - Criar estrutura de diretórios (src/scripts, src/utils, tests)
   - Criar requirements.txt com dependências (hypothesis, pytest, openpyxl, python-dateutil, python-Levenshtein)
   - Criar arquivo de configuração básico
   - _Requirements: Todos_
 
-- [ ] 2. Implementar módulo de normalização de nomes
+- [x] 2. Implementar módulo de normalização de nomes
   - Criar função `normalizar_nome_time()` que remove acentos, converte barras/hífens, normaliza case e whitespace
   - Criar função `normalizar_nome_participante()` para nomes de diretórios
   - Criar função `normalizar_nome_campeonato()` para nomes de campeonatos
   - Criar função `encontrar_time_similar()` usando distância de Levenshtein
   - _Requirements: 1.5, 3.4, 4.5, 9.1, 9.2, 9.3, 9.4, 9.5_
 
-- [ ]* 2.1 Escrever testes de propriedade para normalização
+- [x] 2.1 Escrever testes de propriedade para normalização
   - **Property 3: Championship name normalization consistency**
   - **Property 8: Participant name normalization**
   - **Property 12: Team name normalization equivalence**
   - **Validates: Requirements 1.5, 3.4, 4.5, 9.1-9.4**
 
-- [ ] 3. Implementar módulo de validação de dados
+- [x] 3. Implementar módulo de validação de dados
   - Criar função `validar_estrutura_tabela()` que verifica campos obrigatórios
   - Criar função `validar_estrutura_palpites()` que verifica campos obrigatórios
   - Criar função `validar_estrutura_regras()` que verifica campos obrigatórios
@@ -29,7 +29,7 @@
   - Criar função `validar_participante()` que verifica registro no campeonato
   - _Requirements: 10.1, 10.2, 10.3, 10.4, 10.5, 10.6_
 
-- [ ]* 3.1 Escrever testes de propriedade para validação
+- [x] 3.1 Escrever testes de propriedade para validação
   - **Property 40: Required fields validation**
   - **Property 41: Date format validation**
   - **Property 42: Score validation**
@@ -38,7 +38,7 @@
   - **Property 45: Error message clarity**
   - **Validates: Requirements 10.1-10.6**
 
-- [ ] 4. Implementar módulo de parsing de texto
+- [x] 4. Implementar módulo de parsing de texto
   - Criar função `extrair_apostador()` que identifica nome do apostador
   - Criar função `extrair_rodada()` que extrai número da rodada
   - Criar função `extrair_palpites()` que extrai lista de palpites com suporte a múltiplos formatos de placar
@@ -46,7 +46,7 @@
   - Criar função `identificar_apostas_extras()` que detecta marcadores de apostas extras
   - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.9_
 
-- [ ]* 4.1 Escrever testes de propriedade para parsing
+- [x] 4.1 Escrever testes de propriedade para parsing
   - **Property 14: Participant identification from text**
   - **Property 15: Round extraction from text**
   - **Property 16: Round inference from team names**
@@ -54,7 +54,7 @@
   - **Property 19: Extra bet identification**
   - **Validates: Requirements 5.1, 5.2, 5.3, 5.5, 5.9**
 
-- [ ] 5. Implementar motor de pontuação
+- [x] 5. Implementar motor de pontuação
   - Criar função `verificar_resultado_exato()` que verifica placar idêntico
   - Criar função `verificar_vitoria_gols_um_time()` que verifica vencedor + gols de uma equipe
   - Criar função `verificar_vitoria_diferenca_gols()` que verifica vencedor + diferença
@@ -68,15 +68,15 @@
   - Criar função `calcular_bonus_resultado_exato()` que calcula 1/N para acertos exatos
   - _Requirements: 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 8.10, 8.11, 8.12_
 
-- [ ]* 5.1 Escrever testes de propriedade para pontuação - Resultado exato e bônus
+- [x] 5.1 Escrever testes de propriedade para pontuação - Resultado exato e bônus
   - **Property 29: Exact score bonus calculation**
   - **Validates: Requirements 8.1, 8.2**
 
-- [ ]* 5.2 Escrever testes de propriedade para pontuação - Hierarquia de regras
+- [x] 5.2 Escrever testes de propriedade para pontuação - Hierarquia de regras
   - **Property 30: Scoring rule hierarchy**
   - **Validates: Requirements 8.12**
 
-- [ ]* 5.3 Escrever testes de propriedade para pontuação - Regras individuais
+- [x] 5.3 Escrever testes de propriedade para pontuação - Regras individuais
   - **Property 31: Winner and one team goals scoring**
   - **Property 32: Winner and goal difference scoring**
   - **Property 33: Winner and total goals scoring**
@@ -88,20 +88,20 @@
   - **Property 39: Missing prediction penalty**
   - **Validates: Requirements 8.3-8.11**
 
-- [ ] 6. Implementar gerador de relatórios
+- [x] 6. Implementar gerador de relatórios
   - Criar função `gerar_tabela_classificacao()` que formata tabela de classificação
   - Criar função `calcular_variacao_posicao()` que calcula variação entre rodadas
   - Criar função `formatar_linha_participante()` que formata linha individual
   - Criar função `gerar_cabecalho_relatorio()` que cria cabeçalho do relatório
   - _Requirements: 6.2, 6.3, 6.4, 6.5, 6.6, 7.4, 7.5_
 
-- [ ]* 6.1 Escrever testes unitários para gerador de relatórios
+- [x] 6.1 Escrever testes unitários para gerador de relatórios
   - Testar formatação de tabela com dados de exemplo
   - Testar cálculo de variação de posição
   - Testar ordenação de classificação
   - _Requirements: 6.2, 6.3, 6.4, 6.5, 6.6_
 
-- [ ] 7. Implementar script de criação de campeonato
+- [x] 7. Implementar script de criação de campeonato
   - Criar CLI com argumentos --nome, --temporada, --codigo
   - Implementar função que cria diretório do campeonato
   - Implementar função que cria subdiretórios (Regras, Tabela, Resultados, Participantes)
@@ -111,12 +111,12 @@
   - Adicionar mensagens de confirmação e erro
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5_
 
-- [ ]* 7.1 Escrever testes de propriedade para criação de campeonato
+- [x] 7.1 Escrever testes de propriedade para criação de campeonato
   - **Property 1: Championship directory structure completeness**
   - **Property 2: Initial JSON files validity**
   - **Validates: Requirements 1.1, 1.2, 1.3**
 
-- [ ] 8. Implementar script de geração de regras
+- [x] 8. Implementar script de geração de regras
   - Criar CLI com argumentos --campeonato, --sobrescrever
   - Implementar função que carrega template de regras padrão
   - Implementar função que popula campos campeonato e temporada
@@ -125,12 +125,12 @@
   - Adicionar validação de estrutura gerada
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5_
 
-- [ ]* 8.1 Escrever testes de propriedade para geração de regras
+- [x] 8.1 Escrever testes de propriedade para geração de regras
   - **Property 4: Rules file completeness**
   - **Property 5: Rules file metadata inclusion**
   - **Validates: Requirements 2.1, 2.2, 2.3, 2.5**
 
-- [ ] 9. Implementar script de criação de participantes
+- [x] 9. Implementar script de criação de participantes
   - Criar CLI com argumentos --campeonato, --arquivo, --excel, --coluna
   - Implementar função que lê lista de nomes de arquivo texto
   - Implementar função que lê lista de nomes de planilha Excel
@@ -141,12 +141,12 @@
   - Adicionar validação de participantes duplicados
   - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
 
-- [ ]* 9.1 Escrever testes de propriedade para criação de participantes
+- [x] 9.1 Escrever testes de propriedade para criação de participantes
   - **Property 6: Participant structure creation**
   - **Property 7: Participant palpites file structure**
   - **Validates: Requirements 3.1, 3.2, 3.3, 3.5**
 
-- [ ] 10. Implementar script de importação de tabela
+- [x] 10. Implementar script de importação de tabela
   - Criar CLI com argumentos --campeonato, --arquivo, --excel, --mesclar
   - Implementar função que parseia arquivo texto com jogos
   - Implementar função que parseia planilha Excel com jogos
@@ -159,14 +159,14 @@
   - Adicionar validação de dados importados
   - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7_
 
-- [ ]* 10.1 Escrever testes de propriedade para importação de tabela
+- [x] 10.1 Escrever testes de propriedade para importação de tabela
   - **Property 9: Game data extraction completeness**
   - **Property 10: Game organization by rounds**
   - **Property 11: Game initialization state**
   - **Property 13: Date format conversion**
   - **Validates: Requirements 4.1, 4.2, 4.3, 4.4, 4.6**
 
-- [ ] 11. Implementar script de importação de palpites
+- [x] 11. Implementar script de importação de palpites
   - Criar CLI com argumentos --campeonato, --arquivo, --texto, --rodada
   - Implementar função que identifica participante do texto
   - Implementar função que extrai rodada do texto
@@ -180,11 +180,11 @@
   - Adicionar processamento de apostas extras
   - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9_
 
-- [ ]* 11.1 Escrever testes de propriedade para importação de palpites
+- [x] 11.1 Escrever testes de propriedade para importação de palpites
   - **Property 18: Prediction file update**
   - **Validates: Requirements 5.7**
 
-- [ ] 12. Implementar script de processamento de resultados - Modo teste
+- [x] 12. Implementar script de processamento de resultados - Modo teste
   - Criar CLI com argumentos --campeonato, --rodada, --teste, --final
   - Implementar função que carrega tabela, regras e palpites de todos os participantes
   - Implementar função que valida jogos obrigatórios finalizados
@@ -196,7 +196,7 @@
   - Implementar modo teste que apenas exibe resultados sem modificar arquivos
   - _Requirements: 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7_
 
-- [ ]* 12.1 Escrever testes de propriedade para processamento modo teste
+- [x] 12.1 Escrever testes de propriedade para processamento modo teste
   - **Property 20: Test mode file immutability**
   - **Property 21: Ranking completeness**
   - **Property 22: Ranking entry completeness**
@@ -204,7 +204,7 @@
   - **Property 24: Mandatory games validation**
   - **Validates: Requirements 6.1, 6.2, 6.3, 6.4, 6.6, 6.7**
 
-- [ ] 13. Implementar script de processamento de resultados - Modo final
+- [x] 13. Implementar script de processamento de resultados - Modo final
   - Implementar função que cria backup de tabela.json com timestamp
   - Implementar função que atualiza campo rodada_atual
   - Implementar função que gera arquivo de relatório em texto
@@ -213,24 +213,25 @@
   - Adicionar prompt de confirmação para modo final
   - _Requirements: 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7_
 
-- [ ]* 13.1 Escrever testes de propriedade para processamento modo final
+- [x] 13.1 Escrever testes de propriedade para processamento modo final
   - **Property 25: Backup creation with timestamp**
   - **Property 26: Current round update**
   - **Property 27: Report file generation**
   - **Property 28: Report content completeness**
   - **Validates: Requirements 7.1, 7.2, 7.3, 7.4, 7.5, 7.6**
+  - **Validates: Requirements 7.1, 7.2, 7.3, 7.4, 7.5, 7.6**
 
-- [ ] 14. Checkpoint - Garantir que todos os testes passam
+- [x] 14. Checkpoint - Garantir que todos os testes passam
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 15. Criar documentação de uso
+- [x] 15. Criar documentação de uso
   - Criar README.md com instruções de instalação
   - Documentar uso de cada script com exemplos
   - Criar guia de formatos de entrada aceitos
   - Documentar estrutura de diretórios esperada
   - _Requirements: Todos_
 
-- [ ]* 15.1 Criar exemplos de uso
+- [x] 15.1 Criar exemplos de uso
   - Criar scripts de exemplo para cada operação
   - Criar dados de teste para demonstração
   - _Requirements: Todos_

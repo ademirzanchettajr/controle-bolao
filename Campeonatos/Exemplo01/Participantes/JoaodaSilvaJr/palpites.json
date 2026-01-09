@@ -1,0 +1,21 @@
+{
+  "apostador": "João da Silva Jr.",
+  "codigo_apostador": "UK0A",
+  "campeonato": "Campeonato Brasileiro Série A",
+  "temporada": "2024",
+  "palpites": [
+    {
+      "rodada": 1,
+      "data_palpite": "2026-01-09T15:48:17.296262",
+      "jogos": [
+        {
+          "id": "jogo-001",
+          "mandante": "Flamengo",
+          "visitante": "Palmeiras",
+          "palpite_mandante": 2,
+          "palpite_visitante": 1
+        }
+      ]
+    }
+  ]
+}

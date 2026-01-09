@@ -1,0 +1,4 @@
+# file: /Users/lmpsilva/Documents/sandbox/ControleBolao/src/utils/pontuacao.py
+# hypothesis_version: 6.141.1
+
+[-1.0, 0.0, 1.0, 'AE', 'AG', 'AR', 'AS', 'AV', 'NP', 'PA', 'RI', 'VD', 'VG', 'VS', 'apenas_empate', 'apenas_vitoria', 'codigo', 'gols_mandante', 'gols_um_time', 'gols_visitante', 'palpite_mandante', 'palpite_visitante', 'pontos', 'pontos_base', 'resultado_exato', 'resultado_inverso', 'soma_gols', 'vitoria_gols_um_time', 'vitoria_soma_gols']

@@ -1,0 +1,4 @@
+# file: /Users/lmpsilva/Documents/sandbox/ControleBolao/src/utils/__init__.py
+# hypothesis_version: 6.141.1
+
+['calcular_pontuacao', 'gerar_resumo_rodada', 'normalizar_nome_time', 'validar_data', 'validar_id_jogo', 'validar_participante', 'validar_placar', 'verificar_soma_gols']

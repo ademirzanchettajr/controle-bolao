@@ -1,0 +1,4 @@
+# file: /Users/lmpsilva/Documents/sandbox/ControleBolao/src/scripts/processar_resultados.py
+# hypothesis_version: 6.141.1
+
+[0.0, '--campeonato', '--final', '--rodada', '--teste', '=', 'Desconhecido', 'Nome do campeonato', 'Participantes', 'Regras', 'Tabela', '__main__', 'apostador', 'codigo', 'codigo_apostador', 'codigo_regra', 'codigos_regra', 'finalizado', 'gols_mandante', 'gols_visitante', 'id', 'jogos', 'jogos_participados', 'mandante', 'numero', 'obrigatorio', 'palpite_mandante', 'palpite_visitante', 'palpites', 'participante', 'pontos', 'posicao', 'r', 'regras', 'rodada', 'rodadas', 'status', 'store_true', 'temporada', 'total_acumulado', 'total_rodada', 'utf-8', 'variacao', 'visitante']

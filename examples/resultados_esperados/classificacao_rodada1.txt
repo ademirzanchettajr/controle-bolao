@@ -1,0 +1,81 @@
+===============================================================================
+                        RELATÓRIO DA RODADA 1
+===============================================================================
+Campeonato: Copa-Exemplo-2025
+Temporada: 2025
+Data do Relatório: 2025-01-09 12:00:00
+Rodada Processada: 1
+
+===============================================================================
+                           CLASSIFICAÇÃO GERAL
+===============================================================================
+
+Pos | Participante      | Pts Rodada | Pts Total | Variação | Jogos | Códigos de Acerto
+----|-------------------|------------|-----------|----------|-------|------------------
+1º  | João Silva        |    15.33   |   15.33   |    --    |   6   | AR,V,AR,V,V,AR
+2º  | Pedro Oliveira    |    14.00   |   14.00   |    --    |   6   | VG,E,VD,E,VD,VS
+3º  | Maria Santos      |    13.00   |   13.00   |    --    |   6   | V,VG,VD,RI,E,AR
+4º  | Ana Costa         |    12.00   |   12.00   |    --    |   6   | V,VG,E,V,E,AR
+5º  | Carlos Alberto    |    11.00   |   11.00   |    --    |   6   | AR,V,E,VG,RI,E
+6º  | Fernanda Lima     |    10.00   |   10.00   |    --    |   6   | E,V,AR,RI,E,VD
+7º  | Roberto Carlos    |     9.00   |    9.00   |    --    |   6   | VD,E,VD,RI,V,VG
+8º  | José Santos       |     8.00   |    8.00   |    --    |   6   | RI,VD,V,VG,V,RI
+9º  | Mario Silva       |     7.00   |    7.00   |    --    |   6   | VG,E,VD,E,RI,VD
+
+===============================================================================
+                              DETALHES DOS JOGOS
+===============================================================================
+
+Jogo 1: Flamengo 2x1 Palmeiras
+- Acertos exatos: 3 participantes (João Silva, Carlos Alberto, Ana Costa)
+- Bônus por acerto exato: 0.33 pontos
+
+Jogo 2: Santos 1x1 Corinthians  
+- Acertos exatos: 2 participantes (Pedro Oliveira, Roberto Carlos)
+- Bônus por acerto exato: 0.50 pontos
+
+Jogo 3: São Paulo 3x0 Grêmio
+- Acertos exatos: 2 participantes (João Silva, Fernanda Lima)
+- Bônus por acerto exato: 0.50 pontos
+
+Jogo 4: Atlético-MG 1x2 Botafogo
+- Acertos exatos: 1 participante (Pedro Oliveira)
+- Bônus por acerto exato: 1.00 ponto
+
+Jogo 5: Vasco 0x1 Cruzeiro
+- Acertos exatos: 1 participante (Roberto Carlos)
+- Bônus por acerto exato: 1.00 ponto
+
+Jogo 6: Internacional 2x1 Bahia
+- Acertos exatos: 3 participantes (João Silva, Maria Santos, Ana Costa)
+- Bônus por acerto exato: 0.33 pontos
+
+===============================================================================
+                            LEGENDA DOS CÓDIGOS
+===============================================================================
+
+AR  = Resultado Exato (12 + bônus pontos)
+VG  = Vencedor + Gols de Uma Equipe (7 pontos)
+VD  = Vencedor + Diferença de Gols (6 pontos)
+VS  = Vencedor + Soma Total de Gols (6 pontos)
+V   = Apenas Vencedor (5 pontos)
+E   = Apenas Empate (5 pontos)
+G   = Gols de Um Time (2 pontos)
+S   = Soma Total de Gols (1 ponto)
+RI  = Resultado Invertido (-3 pontos)
+PA  = Palpite Ausente (-1 ponto)
+
+===============================================================================
+                              ESTATÍSTICAS
+===============================================================================
+
+Total de Participantes: 9
+Total de Jogos: 6
+Total de Palpites: 54
+Acertos Exatos: 12
+Taxa de Acerto Exato: 22.2%
+Pontuação Média: 11.0 pontos
+Maior Pontuação: 15.33 pontos (João Silva)
+Menor Pontuação: 7.00 pontos (Mario Silva)
+
+===============================================================================

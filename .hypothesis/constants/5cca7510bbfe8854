@@ -1,0 +1,4 @@
+# file: /Users/lmpsilva/Documents/sandbox/ControleBolao/src/scripts/criar_campeonato.py
+# hypothesis_version: 6.141.1
+
+['%Y-%m-%dT%H:%M:%SZ', ', ', '--codigo', '--forcar', '--nome', '--temporada', '1.0', 'Regras', 'TEMP', 'Tabela', '__main__', 'campeonato', 'codigo', 'codigo_campeonato', 'data_atualizacao', 'data_criacao', 'descricao', 'observacoes', 'placeholder', 'pontos', 'regras', 'rodada_atual', 'rodadas', 's', 'sim', 'store_true', 'temporada', 'utf-8', 'versao', 'w', 'y', 'yes']

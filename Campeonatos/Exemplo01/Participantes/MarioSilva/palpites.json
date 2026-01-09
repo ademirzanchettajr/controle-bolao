@@ -6,22 +6,8 @@
   "palpites": [
     {
       "rodada": 1,
-      "data_palpite": "2024-04-12T10:30:00Z",
+      "data_palpite": "2026-01-09T15:46:16.442345",
       "jogos": [
-        {
-          "id": "jogo-001",
-          "mandante": "Flamengo",
-          "visitante": "Palmeiras",
-          "palpite_mandante": 2,
-          "palpite_visitante": 1
-        },
-        {
-          "id": "jogo-002",
-          "mandante": "Corinthians",
-          "visitante": "São Paulo",
-          "palpite_mandante": 1,
-          "palpite_visitante": 2
-        },
         {
           "id": "jogo-003",
           "mandante": "Grêmio",
@@ -42,12 +28,26 @@
           "visitante": "Vasco",
           "palpite_mandante": 2,
           "palpite_visitante": 2
+        },
+        {
+          "id": "jogo-001",
+          "mandante": "Flamengo",
+          "visitante": "Palmeiras",
+          "palpite_mandante": 2,
+          "palpite_visitante": 1
+        },
+        {
+          "id": "jogo-002",
+          "mandante": "Corinthians",
+          "visitante": "São Paulo",
+          "palpite_mandante": 0,
+          "palpite_visitante": 2
         }
       ]
     },
     {
       "rodada": 2,
-      "data_palpite": "2024-04-19T14:15:00Z",
+      "data_palpite": "2026-01-09T15:46:40.884271",
       "jogos": [
         {
           "id": "jogo-006",
@@ -83,12 +83,26 @@
           "visitante": "Flamengo",
           "palpite_mandante": 0,
           "palpite_visitante": 3
+        },
+        {
+          "id": "jogo-003",
+          "mandante": "Palmeiras",
+          "visitante": "Corinthians",
+          "palpite_mandante": 2,
+          "palpite_visitante": 0
+        },
+        {
+          "id": "jogo-004",
+          "mandante": "São Paulo",
+          "visitante": "Flamengo",
+          "palpite_mandante": 1,
+          "palpite_visitante": 1
         }
       ]
     },
     {
       "rodada": 3,
-      "data_palpite": "2024-04-26T16:45:00Z",
+      "data_palpite": "2026-01-09T15:46:52.058557",
       "jogos": [
         {
           "id": "jogo-011",
@@ -124,6 +138,31 @@
           "visitante": "Cruzeiro",
           "palpite_mandante": 2,
           "palpite_visitante": 1
+        },
+        {
+          "id": "jogo-005",
+          "mandante": "Botafogo",
+          "visitante": "Vasco",
+          "palpite_mandante": 1,
+          "palpite_visitante": 1
+        },
+        {
+          "id": "jogo-006",
+          "mandante": "Fluminense",
+          "visitante": "Atlético-MG",
+          "palpite_mandante": 2,
+          "palpite_visitante": 0
+        }
+      ],
+      "apostas_extras": [
+        {
+          "id": "jogo-005",
+          "mandante": "Botafogo",
+          "visitante": "Vasco",
+          "palpite_mandante": 2,
+          "palpite_visitante": 2,
+          "tipo": "extra",
+          "identificador": "Jogo 5"
         }
       ]
     }

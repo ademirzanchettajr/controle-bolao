@@ -1,0 +1,4 @@
+# file: /Users/lmpsilva/Documents/sandbox/ControleBolao/src/utils/relatorio.py
+# hypothesis_version: 6.141.1
+
+[0.0, ' | Códigos de Acerto', '%d/%m/%Y às %H:%M', '-', '=', 'Desconhecido', 'LEGENDA DOS CÓDIGOS:', 'codigos_regra', 'jogos_participados', 'participante', 'total_acumulado', 'total_rodada']

@@ -1,0 +1,4 @@
+# file: /Users/lmpsilva/Documents/sandbox/ControleBolao/src/utils/parser.py
+# hypothesis_version: 6.141.1
+
+[0.5, 1.0, '(.+?)\\s+x\\s+(.+)', '(\\d+)[ªº]?\\s*jornada', '(\\d+)[ªº]?\\s*rodada', '-', '/', '[()[\\]{}]', '\\s+', '^\\d+$', 'apostador', 'apostador\\s*:\\s*(.+)', 'apostas_extras', 'extra', 'gols_mandante', 'gols_visitante', 'identificador', 'jogo\\s*\\d+\\s*:', 'jogos', 'jornada\\s*(\\d+)', 'mandante', 'nome\\s*:\\s*(.+)', 'numero', 'palpites', 'r\\s*(\\d+)', 'rodada', 'rodada\\s*(\\d+)', 'rodada_inferida', 'rodadas', 'round\\s*(\\d+)', 'texto_original', 'timestamp', 'tipo', 'visitante']

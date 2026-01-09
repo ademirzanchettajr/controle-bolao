@@ -1,0 +1,15 @@
+Rodada 1
+13/04/2025 16:00 - Flamengo x Palmeiras - Maracanã
+13/04/2025 18:30 - Santos x Corinthians - Vila Belmiro
+13/04/2025 19:00 - São Paulo x Grêmio - Morumbi
+13/04/2025 20:00 - Atlético-MG x Botafogo - Mineirão
+13/04/2025 21:00 - Vasco x Cruzeiro - São Januário
+13/04/2025 21:30 - Internacional x Bahia - Beira-Rio
+
+Rodada 2
+20/04/2025 16:00 - Palmeiras x Santos - Allianz Parque
+20/04/2025 18:30 - Corinthians x São Paulo - Neo Química Arena
+20/04/2025 19:00 - Grêmio x Atlético-MG - Arena do Grêmio
+20/04/2025 20:00 - Botafogo x Vasco - Nilton Santos
+20/04/2025 21:00 - Cruzeiro x Internacional - Mineirão
+20/04/2025 21:30 - Bahia x Flamengo - Arena Fonte Nova

@@ -2,63 +2,64 @@
   "campeonato": "Campeonato Brasileiro Série A",
   "temporada": "2024",
   "versao": "1.0",
-  "data_criacao": "2024-04-01T10:00:00Z",
+  "data_criacao": "2026-01-09T13:32:47Z",
   "regras": {
     "resultado_exato": {
       "pontos_base": 12,
       "bonus_divisor": true,
-      "descricao": "Placar exato + bônus proporcional",
+      "descricao": "Resultado exato (placar idêntico)",
       "codigo": "AR"
     },
     "vitoria_gols_um_time": {
       "pontos": 7,
-      "descricao": "Acerta vencedor e gols de uma equipe",
+      "descricao": "Vencedor + gols de uma equipe",
       "codigo": "VG"
     },
     "vitoria_diferenca_gols": {
       "pontos": 6,
-      "descricao": "Acerta vencedor e diferença de gols",
+      "descricao": "Vencedor + diferença de gols",
       "codigo": "VD"
     },
     "vitoria_soma_gols": {
       "pontos": 6,
-      "descricao": "Acerta vencedor e total de gols",
+      "descricao": "Vencedor + soma total de gols",
       "codigo": "VS"
     },
     "apenas_vitoria": {
       "pontos": 5,
-      "descricao": "Acerta apenas o vencedor",
-      "codigo": "AV"
+      "descricao": "Apenas vencedor",
+      "codigo": "V"
     },
     "apenas_empate": {
       "pontos": 5,
-      "descricao": "Acerta que houve empate",
-      "codigo": "AE"
+      "descricao": "Apenas empate",
+      "codigo": "E"
     },
     "gols_um_time": {
       "pontos": 2,
-      "descricao": "Acerta gols de apenas um time",
-      "codigo": "AG"
+      "descricao": "Gols de um time (sem resultado)",
+      "codigo": "G"
     },
     "soma_gols": {
       "pontos": 1,
-      "descricao": "Acerta apenas o total de gols",
-      "codigo": "AS"
+      "descricao": "Apenas soma total de gols",
+      "codigo": "S"
     },
     "resultado_inverso": {
       "pontos": -3,
-      "descricao": "Placar exatamente invertido",
+      "descricao": "Resultado invertido (penalidade)",
       "codigo": "RI"
     },
-    "sem_palpite": {
+    "palpite_ausente": {
       "pontos": -1,
-      "descricao": "Palpite não enviado pelo apostador",
-      "codigo": "SP"
+      "descricao": "Palpite não enviado (jogo obrigatório)",
+      "codigo": "PA"
     }
   },
   "observacoes": [
-    "As condições são avaliadas em ordem de prioridade",
-    "Apenas uma pontuação é atribuída por palpite (a de maior valor aplicável)",
-    "O bônus do resultado exato é calculado como: 1 ponto ÷ número de apostadores que acertaram o mesmo jogo"
+    "Regras de pontuação padrão do Sistema de Controle de Bolão",
+    "Hierarquia: maior pontuação aplicável é atribuída",
+    "Bônus para resultado exato: 1/N onde N = número de acertos exatos no jogo",
+    "Jogos obrigatórios sem palpite recebem penalidade de -1 ponto"
   ]
 }

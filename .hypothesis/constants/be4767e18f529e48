@@ -1,0 +1,4 @@
+# file: /Users/lmpsilva/Documents/sandbox/ControleBolao/src/scripts/importar_tabela.py
+# hypothesis_version: 6.141.1
+
+['%H:%M', '%Y-%m-%d', '%Y-%m-%dT%H:%M:%SZ', '%d-%m-%Y', '%d/%m/%Y', '%d/%m/%y', '-', '--arquivo', '--campeonato', '--excel', '--forcar', '--mesclar', 'A definir', 'Tabela', '__main__', 'agendado', 'campeonato', 'casa', 'codigo_campeonato', 'data', 'data_atualizacao', 'estadio', 'estádio', 'fora', 'gols_mandante', 'gols_visitante', 'hora', 'id', 'jogo-', 'jogos', 'local', 'mandante', 'mesclar com', 'numero', 'obrigatorio', 'r', 'rodada', 'rodada_atual', 'rodadas', 's', 'sim', 'sobrescrever', 'status', 'store_true', 'temporada', 'utf-8', 'visitante', 'w', 'y', 'yes']

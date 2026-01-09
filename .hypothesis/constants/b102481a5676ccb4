@@ -1,0 +1,4 @@
+# file: /Users/lmpsilva/Documents/sandbox/ControleBolao/src/utils/validacao.py
+# hypothesis_version: 6.141.1
+
+[', ', 'Participantes', 'agendado', 'apenas_empate', 'apenas_vitoria', 'apostador', 'bonus_divisor', 'campeonato', 'codigo', 'codigo_apostador', 'codigo_campeonato', 'data', 'data_atualizacao', 'data_criacao', 'data_final', 'data_inicial', 'data_palpite', 'descricao', 'finalizado', 'gols_mandante', 'gols_um_time', 'gols_visitante', 'id', 'jogo-', 'jogos', 'local', 'mandante', 'numero', 'obrigatorio', 'observacoes', 'palpite_ausente', 'palpite_mandante', 'palpite_visitante', 'palpites', 'pontos', 'pontos_base', 'regras', 'resultado_exato', 'resultado_inverso', 'rodada', 'rodada_atual', 'rodadas', 'soma_gols', 'status', 'temporada', 'versao', 'visitante', 'vitoria_gols_um_time', 'vitoria_soma_gols']
