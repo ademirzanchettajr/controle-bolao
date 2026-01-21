@@ -120,15 +120,27 @@ python src/scripts/importar_tabela.py --campeonato "Brasileirao-2025" --excel ta
 
 ### 5. Importar Palpites
 
+#### Palpites de uma rodada:
 ```bash
 python src/scripts/importar_palpites.py --campeonato "Brasileirao-2025" --arquivo palpites_rodada1.txt
+```
+
+#### Palpites de múltiplas rodadas:
+```bash
+python src/scripts/importar_palpites.py --campeonato "Brasileirao-2025" --arquivo palpites_completos.txt
+```
+
+#### Importar apenas uma rodada específica de um arquivo com múltiplas rodadas:
+```bash
+python src/scripts/importar_palpites.py --campeonato "Brasileirao-2025" --arquivo palpites_completos.txt --rodada 3
 ```
 
 **Parâmetros:**
 - `--campeonato`: Nome do campeonato
 - `--arquivo`: Arquivo com texto dos palpites
 - `--texto`: (Opcional) Texto direto dos palpites
-- `--rodada`: (Opcional) Forçar número da rodada
+- `--rodada`: (Opcional) Forçar número da rodada ou filtrar rodada específica
+- `--forcar`: (Opcional) Não solicitar confirmações
 
 ### 6. Processar Resultados
 
@@ -152,9 +164,9 @@ python src/scripts/processar_resultados.py --campeonato "Brasileirao-2025" --rod
 
 ### Formato de Palpites (WhatsApp)
 
-O sistema aceita múltiplos formatos de texto para palpites:
+O sistema aceita múltiplos formatos de texto para palpites, incluindo **palpites de múltiplas rodadas em um único arquivo**.
 
-#### Formato Básico:
+#### Formato Básico (Rodada Única):
 ```
 João Silva
 Rodada 1
@@ -163,6 +175,35 @@ Flamengo 2x1 Palmeiras
 Santos 0-0 Corinthians
 São Paulo 3 x 2 Grêmio
 ```
+
+#### Formato com Múltiplas Rodadas:
+```
+Batman
+Palpites Completos - Campeonato Paulista 2026
+
+🦇 RODADA 1 🦇
+São Paulo 2x1 Palmeiras
+Corinthians 1-0 Santos
+Ponte Preta 1x1 Guarani
+
+🦇 RODADA 2 🦇
+Palmeiras 2-1 Corinthians
+Santos 3x0 Ponte Preta
+Guarani 0x2 São Paulo
+
+🦇 RODADA 3 🦇
+São Paulo 1x0 Corinthians
+Palmeiras 2-2 Santos
+Ponte Preta 1x2 Mirassol
+```
+
+#### Marcadores de Rodada Suportados:
+- `🦇 RODADA 1 🦇` (formato Batman)
+- `⚡ RODADA 2 ⚡` (formato Robin)
+- `RODADA 3` (formato simples)
+- `1ª RODADA` (formato ordinal)
+- `R4` (formato abreviado)
+- `ROUND 5` (formato inglês)
 
 #### Com Marcadores:
 ```
@@ -177,6 +218,7 @@ São Paulo 3 - 2 Grêmio
 #### Formatos de Placar Aceitos:
 - `2x1`, `2-1`, `2 x 1`, `2 - 1`
 - `0x0`, `0-0`, `0 x 0`, `0 - 0`
+- `2:1` (formato com dois pontos)
 
 ### Formato de Tabela de Jogos
 

@@ -5,10 +5,13 @@ Script de importação de palpites para o Sistema de Controle de Bolão.
 Este script processa texto de palpites (ex: mensagens do WhatsApp) e atualiza
 o arquivo palpites.json do participante correspondente.
 
+Suporta importação de palpites de uma única rodada ou múltiplas rodadas de uma só vez.
+
 Uso:
     python importar_palpites.py --campeonato "Brasileirao-2025" --arquivo "palpite.txt"
     python importar_palpites.py --campeonato "Brasileirao-2025" --texto "Mario Silva\n1ª Rodada\nFlamengo 2x1 Palmeiras"
-    python importar_palpites.py --campeonato "Brasileirao-2025" --arquivo "palpite.txt" --rodada 5
+    python importar_palpites.py --campeonato "Brasileirao-2025" --arquivo "palpites_multiplas_rodadas.txt"
+    python importar_palpites.py --campeonato "Brasileirao-2025" --arquivo "palpites_multiplas_rodadas.txt" --rodada 5
 """
 
 import argparse
@@ -23,7 +26,7 @@ from typing import Dict, List, Any, Optional, Tuple
 sys.path.append(str(Path(__file__).parent.parent))
 
 from config import CAMPEONATOS_DIR, ARQUIVO_PALPITES, ARQUIVO_TABELA
-from utils.parser import processar_texto_palpite
+from utils.parser import processar_texto_palpite, processar_texto_multiplas_rodadas
 from utils.validacao import validar_id_jogo, validar_participante
 from utils.normalizacao import normalizar_nome_time, encontrar_time_similar
 
@@ -365,7 +368,7 @@ def atualizar_palpites_participante(dados_participante: Dict[str, Any], rodada: 
     return dados_participante
 
 
-def confirmar_sobrescrita(participante: str, rodada: int, palpites_existentes: List[Dict[str, Any]]) -> bool:
+def confirmar_sobrescrita(participante: str, rodada: int, palpites_existentes: List[Dict[str, Any]], forcar: bool = False) -> bool:
     """
     Solicita confirmação do usuário para sobrescrever palpites existentes.
     
@@ -373,10 +376,14 @@ def confirmar_sobrescrita(participante: str, rodada: int, palpites_existentes: L
         participante: Nome do participante
         rodada: Número da rodada
         palpites_existentes: Lista de palpites já existentes
+        forcar: Se True, não solicita confirmação
         
     Returns:
-        True se usuário confirmar, False caso contrário
+        True se usuário confirmar ou se forçado, False caso contrário
     """
+    if forcar:
+        return True
+        
     print(f"\nO participante '{participante}' já possui palpites para a rodada {rodada}:")
     
     for palpite in palpites_existentes:
@@ -397,9 +404,17 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Exemplos de uso:
+  # Importar palpites de uma rodada
   python importar_palpites.py --campeonato "Brasileirao-2025" --arquivo "palpite.txt"
+  
+  # Importar palpites de múltiplas rodadas
+  python importar_palpites.py --campeonato "Brasileirao-2025" --arquivo "palpites_completos.txt"
+  
+  # Importar apenas uma rodada específica de um arquivo com múltiplas rodadas
+  python importar_palpites.py --campeonato "Brasileirao-2025" --arquivo "palpites_completos.txt" --rodada 5
+  
+  # Usar texto direto
   python importar_palpites.py --campeonato "Brasileirao-2025" --texto "Mario Silva\\n1ª Rodada\\nFlamengo 2x1 Palmeiras"
-  python importar_palpites.py --campeonato "Brasileirao-2025" --arquivo "palpite.txt" --rodada 5
         """
     )
     
@@ -422,7 +437,13 @@ Exemplos de uso:
     parser.add_argument(
         '--rodada',
         type=int,
-        help='Forçar número da rodada (opcional)'
+        help='Forçar número da rodada específica (opcional). Para arquivos com múltiplas rodadas, processa apenas a rodada especificada.'
+    )
+    
+    parser.add_argument(
+        '--forcar',
+        action='store_true',
+        help='Força importação sem confirmação'
     )
     
     args = parser.parse_args()
@@ -463,9 +484,149 @@ Exemplos de uso:
     else:
         texto_palpite = args.texto
     
-    # Processar texto do palpite
+    # Processar texto do palpite - detectar se há múltiplas rodadas
     print("Processando texto do palpite...")
-    resultado_parsing = processar_texto_palpite(texto_palpite, tabela)
+    
+    # Primeiro, tentar processar como múltiplas rodadas
+    resultados_multiplas_rodadas = processar_texto_multiplas_rodadas(texto_palpite, tabela)
+    
+    # Se encontrou múltiplas rodadas, processar cada uma
+    if len(resultados_multiplas_rodadas) > 1:
+        print(f"Detectadas {len(resultados_multiplas_rodadas)} rodadas no texto")
+        
+        # Verificar se foi especificada uma rodada específica
+        if args.rodada:
+            # Filtrar apenas a rodada especificada
+            resultados_filtrados = [r for r in resultados_multiplas_rodadas if r['rodada'] == args.rodada]
+            if not resultados_filtrados:
+                print(f"Erro: Rodada {args.rodada} não encontrada no texto")
+                print(f"Rodadas disponíveis: {[r['rodada'] for r in resultados_multiplas_rodadas]}")
+                return 1
+            resultados_multiplas_rodadas = resultados_filtrados
+            print(f"Processando apenas a rodada {args.rodada} conforme especificado")
+        
+        # Processar cada rodada
+        apostador_principal = None
+        caminho_participante = None
+        total_palpites_processados = 0
+        
+        for i, resultado_parsing in enumerate(resultados_multiplas_rodadas):
+            rodada = resultado_parsing['rodada']
+            print(f"\n--- Processando Rodada {rodada} ({i+1}/{len(resultados_multiplas_rodadas)}) ---")
+            
+            # Verificar apostador (deve ser o mesmo para todas as rodadas)
+            if not apostador_principal:
+                if not resultado_parsing['apostador']:
+                    print("Erro: Não foi possível identificar o apostador no texto")
+                    print("Certifique-se de que o nome está na primeira linha ou marcado com 'Apostador:'")
+                    return 1
+                
+                apostador_principal = resultado_parsing['apostador']
+                print(f"Apostador identificado: {apostador_principal}")
+                
+                # Identificar participante
+                caminho_participante = identificar_participante(apostador_principal, caminho_campeonato)
+                if not caminho_participante:
+                    return 1
+                
+                print(f"Participante encontrado: {caminho_participante.name}")
+            
+            # Verificar se há palpites para processar nesta rodada
+            if not resultado_parsing['palpites']:
+                print(f"Aviso: Nenhum palpite encontrado para a rodada {rodada}")
+                if not resultado_parsing['apostas_extras']:
+                    print("Nenhuma aposta extra encontrada também")
+                    continue
+            
+            # Normalizar nomes de times nos palpites
+            palpites_normalizados = normalizar_palpites_times(resultado_parsing['palpites'], tabela)
+            apostas_extras_normalizadas = normalizar_palpites_times(resultado_parsing['apostas_extras'], tabela)
+            
+            # Validar palpites contra tabela
+            palpites_validados, erros_palpites = validar_palpites_contra_tabela(palpites_normalizados, rodada, tabela)
+            apostas_extras_validadas, erros_extras = validar_palpites_contra_tabela(apostas_extras_normalizadas, rodada, tabela)
+            
+            # Mostrar erros se houver
+            todos_erros = erros_palpites + erros_extras
+            if todos_erros:
+                print(f"Erros encontrados na rodada {rodada}:")
+                for erro in todos_erros:
+                    print(f"  - {erro}")
+            
+            # Verificar se há palpites válidos para processar
+            if not palpites_validados and not apostas_extras_validadas:
+                print(f"Aviso: Nenhum palpite válido encontrado para a rodada {rodada}")
+                continue
+            
+            print(f"Palpites válidos encontrados na rodada {rodada}: {len(palpites_validados)}")
+            if apostas_extras_validadas:
+                print(f"Apostas extras válidas encontradas na rodada {rodada}: {len(apostas_extras_validadas)}")
+            
+            # Carregar dados atuais do participante (apenas na primeira vez)
+            if i == 0:
+                dados_participante = carregar_palpites_participante(caminho_participante)
+                if not dados_participante:
+                    return 1
+            
+            # Verificar se já existem palpites para esta rodada
+            palpites_existentes = []
+            for entrada in dados_participante.get('palpites', []):
+                if entrada.get('rodada') == rodada:
+                    palpites_existentes = entrada.get('jogos', [])
+                    break
+            
+            if palpites_existentes:
+                if not confirmar_sobrescrita(apostador_principal, rodada, palpites_existentes, args.forcar):
+                    print(f"Rodada {rodada} pulada pelo usuário")
+                    continue
+            
+            # Atualizar dados do participante
+            dados_participante = atualizar_palpites_participante(
+                dados_participante, rodada, palpites_validados, apostas_extras_validadas
+            )
+            
+            total_palpites_processados += len(palpites_validados)
+            
+            # Mostrar resumo da rodada
+            print(f"Resumo da rodada {rodada}:")
+            for palpite in palpites_validados:
+                mandante = palpite['mandante']
+                visitante = palpite['visitante']
+                gols_m = palpite['palpite_mandante']
+                gols_v = palpite['palpite_visitante']
+                print(f"  {mandante} {gols_m}x{gols_v} {visitante}")
+            
+            if apostas_extras_validadas:
+                print(f"Apostas extras da rodada {rodada}:")
+                for aposta in apostas_extras_validadas:
+                    identificador = aposta.get('identificador', 'Extra')
+                    mandante = aposta['mandante']
+                    visitante = aposta['visitante']
+                    gols_m = aposta['palpite_mandante']
+                    gols_v = aposta['palpite_visitante']
+                    print(f"  {identificador}: {mandante} {gols_m}x{gols_v} {visitante}")
+        
+        # Salvar arquivo atualizado (uma vez no final)
+        if total_palpites_processados > 0:
+            if salvar_palpites_participante(caminho_participante, dados_participante):
+                rodadas_processadas = [r['rodada'] for r in resultados_multiplas_rodadas if r['palpites']]
+                print(f"\n✅ Palpites salvos com sucesso para {apostador_principal}")
+                print(f"Rodadas processadas: {rodadas_processadas}")
+                print(f"Total de palpites processados: {total_palpites_processados}")
+                return 0
+            else:
+                print("Erro ao salvar palpites")
+                return 1
+        else:
+            print("Nenhum palpite foi processado")
+            return 1
+    
+    # Se não encontrou múltiplas rodadas, processar como rodada única (comportamento original)
+    elif len(resultados_multiplas_rodadas) == 1:
+        resultado_parsing = resultados_multiplas_rodadas[0]
+    else:
+        # Fallback para o método original se não conseguiu processar
+        resultado_parsing = processar_texto_palpite(texto_palpite, tabela)
     
     # Verificar se conseguiu extrair apostador
     if not resultado_parsing['apostador']:
@@ -492,10 +653,11 @@ Exemplos de uso:
     
     if resultado_parsing['rodada_inferida'] and not args.rodada:
         print(f"Rodada inferida automaticamente: {rodada}")
-        resposta = input("Confirma esta rodada? (s/n): ").strip().lower()
-        if resposta not in ['s', 'sim', 'y', 'yes']:
-            print("Operação cancelada")
-            return 1
+        if not args.forcar:
+            resposta = input("Confirma esta rodada? (s/n): ").strip().lower()
+            if resposta not in ['s', 'sim', 'y', 'yes']:
+                print("Operação cancelada")
+                return 1
     
     print(f"Processando rodada: {rodada}")
     
@@ -543,7 +705,7 @@ Exemplos de uso:
             break
     
     if palpites_existentes:
-        if not confirmar_sobrescrita(resultado_parsing['apostador'], rodada, palpites_existentes):
+        if not confirmar_sobrescrita(resultado_parsing['apostador'], rodada, palpites_existentes, args.forcar):
             print("Operação cancelada")
             return 1
     
