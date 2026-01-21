@@ -141,8 +141,8 @@ def parsear_arquivo_texto(caminho_arquivo: Path) -> List[Dict[str, Any]]:
             continue
         
         # Parsear linha de jogo
-        # Formato: "data hora | mandante x visitante | local"
-        match = re.match(r'(.+?)\s*\|\s*(.+?)\s+x\s+(.+?)\s*\|\s*(.+)', linha, re.IGNORECASE)
+        # Formato: "data hora | mandante x visitante | local" ou "data hora - mandante x visitante - local"
+        match = re.match(r'(.+?)\s*[\|\-]\s*(.+?)\s+x\s+(.+?)\s*[\|\-]\s*(.+)', linha, re.IGNORECASE)
         if match:
             data_hora_str = match.group(1).strip()
             mandante = match.group(2).strip()
@@ -174,8 +174,8 @@ def parsear_arquivo_texto(caminho_arquivo: Path) -> List[Dict[str, Any]]:
             jogos.append(jogo)
         else:
             # Tentar formato alternativo sem local
-            # Formato: "data hora | mandante x visitante"
-            match_alt = re.match(r'(.+?)\s*\|\s*(.+?)\s+x\s+(.+)', linha, re.IGNORECASE)
+            # Formato: "data hora | mandante x visitante" ou "data hora - mandante x visitante"
+            match_alt = re.match(r'(.+?)\s*[\|\-]\s*(.+?)\s+x\s+(.+)', linha, re.IGNORECASE)
             if match_alt:
                 data_hora_str = match_alt.group(1).strip()
                 mandante = match_alt.group(2).strip()
