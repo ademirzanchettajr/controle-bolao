@@ -130,12 +130,12 @@ def gerar_tabela_classificacao(resultados: List[Dict[str, Any]], rodada: int,
     Args:
         resultados: Lista de dicionários com dados dos participantes
                    Cada item deve conter: participante, total_rodada, total_acumulado
-                   Opcionalmente: codigos_regra, jogos_participados
+                   Opcionalmente: codigos_regra, jogos_participados, variacao
         rodada: Número da rodada
         campeonato: Nome do campeonato (opcional)
         temporada: Ano da temporada (opcional)
         incluir_codigos: Se deve incluir códigos de acerto na tabela
-        historico_posicoes: Histórico de posições para calcular variação
+        historico_posicoes: Histórico de posições para calcular variação (opcional)
     
     Returns:
         String com tabela completa formatada
@@ -168,9 +168,9 @@ def gerar_tabela_classificacao(resultados: List[Dict[str, Any]], rodada: int,
         pontos_rodada = resultado.get('total_rodada', 0.0)
         pontos_acumulados = resultado.get('total_acumulado', 0.0)
         
-        # Calcular variação de posição
-        variacao = 0
-        if historico_posicoes:
+        # Usar variação já calculada ou calcular se necessário
+        variacao = resultado.get('variacao', 0)
+        if variacao == 0 and historico_posicoes:
             variacao = calcular_variacao_posicao(participante, i, historico_posicoes)
         
         # Obter códigos de acerto

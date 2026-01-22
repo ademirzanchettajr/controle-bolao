@@ -537,3 +537,157 @@ def processar_texto_palpite(texto: str, tabela: Optional[Dict[str, Any]] = None)
     resultado['apostas_extras'] = identificar_apostas_extras(texto)
     
     return resultado
+
+
+def dividir_texto_por_rodadas(texto: str) -> List[Dict[str, Any]]:
+    """
+    Divide texto com múltiplas rodadas em seções separadas.
+    
+    Procura por marcadores de rodada (ex: "🦇 RODADA 1 🦇", "RODADA 2", etc.)
+    e divide o texto em seções, cada uma contendo os palpites de uma rodada.
+    
+    Args:
+        texto: Texto completo com múltiplas rodadas
+        
+    Returns:
+        Lista de dicionários, cada um contendo:
+        - rodada: número da rodada
+        - texto: texto da seção dessa rodada
+        - apostador: nome do apostador (extraído do início)
+        
+    Examples:
+        >>> texto = "Batman\\n🦇 RODADA 1 🦇\\nFlamengo 2x1 Palmeiras\\n🦇 RODADA 2 🦇\\nSantos 1x0 Corinthians"
+        >>> secoes = dividir_texto_por_rodadas(texto)
+        >>> len(secoes)
+        2
+        >>> secoes[0]['rodada']
+        1
+    """
+    if not texto or not isinstance(texto, str):
+        return []
+    
+    # Extrair apostador do início do texto
+    apostador = extrair_apostador(texto)
+    
+    # Padrões para identificar início de rodada
+    padroes_rodada = [
+        r'🦇\s*RODADA\s+(\d+)\s*🦇',           # "🦇 RODADA 1 🦇"
+        r'⚡\s*RODADA\s+(\d+)\s*⚡',           # "⚡ RODADA 1 ⚡"
+        r'RODADA\s+(\d+)',                     # "RODADA 1"
+        r'(\d+)[ªº]?\s*RODADA',                # "1ª RODADA"
+        r'R\s*(\d+)',                          # "R1", "R 2"
+    ]
+    
+    secoes = []
+    linhas = texto.split('\n')
+    secao_atual = None
+    texto_secao = []
+    
+    for linha in linhas:
+        linha_limpa = linha.strip()
+        if not linha_limpa:
+            continue
+        
+        # Verificar se é início de nova rodada
+        rodada_encontrada = None
+        for padrao in padroes_rodada:
+            match = re.search(padrao, linha_limpa, re.IGNORECASE)
+            if match:
+                try:
+                    rodada_encontrada = int(match.group(1))
+                    if 1 <= rodada_encontrada <= 50:  # Validação básica
+                        break
+                except (ValueError, IndexError):
+                    continue
+        
+        if rodada_encontrada:
+            # Salvar seção anterior se existir
+            if secao_atual is not None and texto_secao:
+                secoes.append({
+                    'rodada': secao_atual,
+                    'texto': '\n'.join(texto_secao),
+                    'apostador': apostador
+                })
+            
+            # Iniciar nova seção
+            secao_atual = rodada_encontrada
+            texto_secao = []
+        else:
+            # Adicionar linha à seção atual
+            if secao_atual is not None:
+                # Pular linhas que são apenas decorativas
+                if not re.match(r'^[🦇⚡🌃🚀]+.*[🦇⚡🌃🚀]+$', linha_limpa):
+                    # Verificar se é linha de palpite válida
+                    if any(char in linha_limpa for char in ['x', '-', ':']) and any(char.isdigit() for char in linha_limpa):
+                        texto_secao.append(linha_limpa)
+    
+    # Salvar última seção
+    if secao_atual is not None and texto_secao:
+        secoes.append({
+            'rodada': secao_atual,
+            'texto': '\n'.join(texto_secao),
+            'apostador': apostador
+        })
+    
+    return secoes
+
+
+def processar_texto_multiplas_rodadas(texto: str, tabela: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+    """
+    Processa texto com múltiplas rodadas, retornando lista de resultados.
+    
+    Esta função detecta automaticamente se o texto contém múltiplas rodadas
+    e processa cada uma separadamente.
+    
+    Args:
+        texto: Texto completo com uma ou múltiplas rodadas
+        tabela: Tabela do campeonato para validação (opcional)
+        
+    Returns:
+        Lista de dicionários, cada um com resultado de uma rodada:
+        - apostador: nome do apostador
+        - rodada: número da rodada
+        - palpites: lista de palpites da rodada
+        - timestamp: timestamp do processamento
+        
+    Examples:
+        >>> texto = "Batman\\n🦇 RODADA 1 🦇\\nFlamengo 2x1 Palmeiras\\n🦇 RODADA 2 🦇\\nSantos 1x0 Corinthians"
+        >>> resultados = processar_texto_multiplas_rodadas(texto)
+        >>> len(resultados)
+        2
+        >>> resultados[0]['rodada']
+        1
+        >>> resultados[1]['rodada']
+        2
+    """
+    if not texto or not isinstance(texto, str):
+        return []
+    
+    # Tentar dividir por rodadas
+    secoes = dividir_texto_por_rodadas(texto)
+    
+    if not secoes:
+        # Se não conseguiu dividir, processar como rodada única
+        resultado_unico = processar_texto_palpite(texto, tabela)
+        if resultado_unico['apostador'] and (resultado_unico['palpites'] or resultado_unico['apostas_extras']):
+            return [resultado_unico]
+        else:
+            return []
+    
+    # Processar cada seção separadamente
+    resultados = []
+    for secao in secoes:
+        # Montar texto da seção com apostador
+        texto_secao = f"{secao['apostador']}\nRodada {secao['rodada']}\n{secao['texto']}"
+        
+        # Processar seção
+        resultado = processar_texto_palpite(texto_secao, tabela)
+        
+        # Garantir que a rodada está correta
+        resultado['rodada'] = secao['rodada']
+        resultado['rodada_inferida'] = False
+        
+        if resultado['palpites'] or resultado['apostas_extras']:
+            resultados.append(resultado)
+    
+    return resultados
